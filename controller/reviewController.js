@@ -119,6 +119,10 @@ module.exports.updateReview = async function updateReview(req, res) {
 
 module.exports.deleteReview = async function deleteReview(req, res) {
   try {
+    // let id = req.body.id;
+    //update average ratings 
+    console.log("reviewId", id);
+    ////
     let planID = req.params.plan;
     let id = req.body.id
     let plan = await planModel.findById(planID);
@@ -131,7 +135,9 @@ module.exports.deleteReview = async function deleteReview(req, res) {
     plan.noOfReviews = newNoOfReviews;
     await plan.save();
     await reviewModel.findByIdAndDelete(id);
-    
+
+    ////
+    let review = await reviewModel.findByIdAndDelete(id);
     res.json({
       message: "review deleted",
       data: review,
