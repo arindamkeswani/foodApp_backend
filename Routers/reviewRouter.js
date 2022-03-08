@@ -12,7 +12,7 @@ reviewRouter
 .get(healthCheck)
 
 async function healthCheck(req, res) {
-    return res.status(200).send("Health is fine. Pipeline successfull");
+    return res.status(200).send("Health is fine. Pipeline successfull again.");
 }
 
 reviewRouter
