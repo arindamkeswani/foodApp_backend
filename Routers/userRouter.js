@@ -10,6 +10,9 @@ userRouter.route('/:id')
 .patch(updateUser)
 .delete(deleteUser)
 
+userRouter.route('/check')
+.get(checkOK)
+
 userRouter
 .route('/signup')
 .post(signup)

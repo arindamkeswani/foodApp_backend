@@ -1,5 +1,9 @@
 const userModel = require("../models/userModel");
 
+module.exports.checkOK = async function checkOK(req,res){
+  return res.status('200').send("200 OK");
+}
+
 module.exports.getUser = async function getUser(req, res) {
   // console.log('getUser called');
   let id = req.id;
