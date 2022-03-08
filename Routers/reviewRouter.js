@@ -8,6 +8,14 @@ reviewRouter
 .get(getAllReviews);
 
 reviewRouter
+.route('/health')
+.get(healthCheck)
+
+async function healthCheck(req, res) {
+    return res.status(200).send("Health is fine. Pipeline successfull");
+}
+
+reviewRouter
 .route('/top3')
 .get(top3reviews);
 
